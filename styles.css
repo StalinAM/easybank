@@ -1,0 +1,134 @@
+:root {
+  /* Primary */
+
+  --Dark-Blue: hsl(233, 26%, 24%);
+  --Lime-Green: hsl(136, 65%, 51%);
+  --Bright-Cyan: hsl(192, 70%, 51%);
+
+  /* Neutral */
+
+  --Grayish-Blue: hsl(233, 8%, 62%);
+  --Light-Grayish-Blue: hsl(220, 16%, 96%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --White: hsl(0, 0%, 100%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Public Sans", sans-serif;
+}
+body {
+  min-height: 100vh;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+  padding: 0 4rem;
+  background-color: var(--White);
+}
+nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+}
+.nav-menu {
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-menu a {
+  font-size: 1.125rem;
+  color: var(--Grayish-Blue);
+  font-weight: 400;
+}
+.btn-invite {
+  color: var(--White);
+  background: linear-gradient(
+    90deg,
+    var(--Lime-Green) 0%,
+    var(--Bright-Cyan) 100%
+  );
+  border-radius: 3rem;
+  padding: 1rem 2rem;
+}
+section {
+  min-height: 100vh;
+  padding: 0 10rem;
+}
+.section-home {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+.section-home article {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+}
+.section-home article h1 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: var(--Dark-Blue);
+}
+.section-home article p,
+.section-about div p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--Grayish-Blue);
+}
+.section-about {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4rem;
+  background-color: var(--Light-Grayish-Blue);
+}
+.head-about {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.head-about h2 {
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: var(--Dark-Blue);
+}
+.container-feature,
+.last-articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+.container-feature article {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.container-feature article h3 {
+  font-size: 1.4rem;
+  color: var(--Dark-Blue);
+  font-weight: 400;
+}
+.container-feature article p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.container-feature article img {
+  width: 4.5rem;
+}
+.last-articles img {
+  width: 100%;
+  height: 200px;
+}
