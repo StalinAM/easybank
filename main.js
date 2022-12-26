@@ -1,27 +1,29 @@
 const openMenu = document.getElementById("open")
 const closeMenu = document.getElementById("close")
 const mobileMenu = document.querySelector(".nav-menu")
-const container = document.querySelector(".main-container")
+const main = document.querySelector(".main-container")
+const footer = document.querySelector(".section-footer")
 const mediaqueryList = window.matchMedia("(min-width:768px)");
 mediaqueryList.addListener(function (EventoMediaQueryList) {
     if (EventoMediaQueryList.matches) {
-        closeMenu.classList.remove("on")
-        container.style.filter = null
-    } else if () {
-        openMenu.classList.
+        // console.log("hola");
+        // openMenu.classList.add("show")
+        // closeMenu.classList.add("show")
     }
 
 });
 openMenu.addEventListener("click", () => {
-    mobileMenu.classList.toggle("show")
-    container.style.filter = "blur(5px) brightness(0.7)"
-    container.style.overflow = "hidden"
-    openMenu.classList.add("off")
-    closeMenu.classList.add("on")
+    // mobileMenu.style.display = "flex"
+    mobileMenu.classList.add("active")
+    openMenu.classList.add("show")
+    closeMenu.classList.remove("show")
+    main.classList.add("screen-filter")
+    footer.classList.add("screen-filter")
 })
 closeMenu.addEventListener("click", () => {
-    openMenu.classList.remove("off")
-    closeMenu.classList.remove("on")
-    mobileMenu.classList.toggle("show")
-    container.style.filter = null
+    mobileMenu.classList.remove("active")
+    closeMenu.classList.add("show")
+    openMenu.classList.remove("show")
+    main.classList.remove("screen-filter")
+    footer.classList.remove("screen-filter")
 })
