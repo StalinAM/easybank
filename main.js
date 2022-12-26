@@ -7,8 +7,8 @@ mediaqueryList.addListener(function (EventoMediaQueryList) {
     if (EventoMediaQueryList.matches) {
         closeMenu.classList.remove("on")
         container.style.filter = null
-    } else {
-        closeMenu.classList.add("on")
+    } else if () {
+        openMenu.classList.
     }
 
 });

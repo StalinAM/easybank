@@ -47,7 +47,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 }
 .icon-open,
 .icon-close {
@@ -73,7 +73,7 @@ nav {
   position: absolute;
   height: 3px;
   background-color: var(--Lime-Green);
-  bottom: -32px;
+  bottom: -24px;
   transition: 0.3s;
   width: 0;
 }
@@ -104,7 +104,7 @@ nav {
 }
 section {
   min-height: 100vh;
-  padding: 0 10rem;
+  padding: 4.2rem 10rem;
 }
 .section-home {
   display: grid;
@@ -115,7 +115,6 @@ section {
   background-image: url(./images/bg-intro-desktop.svg);
   background-repeat: no-repeat;
   background-position: right -30rem bottom 0;
-  position: relative;
 }
 .section-home article {
   padding: 0 4rem 0 10rem;
@@ -134,7 +133,6 @@ section {
 }
 .mockups {
   width: 45rem;
-  position: absolute;
   top: 0;
   right: -8rem;
 }
@@ -224,16 +222,20 @@ section {
   font-size: 0.85rem;
   color: var(--Grayish-Blue);
 }
-footer {
+.section-footer {
   padding: 3rem 10rem;
   background-color: var(--Footer);
   display: flex;
-  justify-content: space-between;
   align-items: stretch;
+  flex-wrap: wrap;
+  row-gap: 2rem;
 }
 .left {
   display: flex;
-  gap: 8rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex: 1 60%;
+  gap: 3rem;
 }
 .rr-ss {
   display: flex;
@@ -256,14 +258,16 @@ footer {
   color: var(--Lime-Green);
 }
 .right {
+  flex: 1 40%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: flex-end;
+  gap: 2rem;
 }
 .copyright {
   font-size: 0.9rem;
   color: var(--Grayish-Blue);
+  text-align: left;
 }
 .show {
   display: flex;
@@ -279,19 +283,32 @@ footer {
   header {
     padding: 0 3rem;
   }
+  .section-footer {
+    gap: 4rem;
+    padding: 3rem 5rem;
+  }
   .nav-menu {
     gap: 1rem;
   }
   section {
     padding: 0 5rem;
   }
+  .section-home {
+    background-position: right -41rem bottom 0;
+  }
   .section-home article {
     padding: 0 2rem 0 5rem;
+  }
+  .right {
+    flex: 1 30%;
+  }
+  .mockups {
+    width: 41rem;
   }
 }
 @media screen and (max-width: 768px) {
   header {
-    padding: 0 3rem;
+    padding: 1rem 3rem;
   }
   .icon-open {
     display: block;
@@ -321,18 +338,67 @@ footer {
   .btn-nav {
     display: none;
   }
+  .container-mockups {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   section {
-    padding: 0 2.5rem;
+    padding: 4rem 2.5rem;
+  }
+  .section-home {
+    grid-template-columns: 1fr;
+    background-image: none;
+    padding: 0 0 4rem;
   }
   .section-home article {
-    padding: 0 1rem 0 2.5rem;
+    grid-row: 2/3;
+    padding: 0 2.5rem 0;
+  }
+  .container-mockups {
+    position: relative;
+    grid-row: 1/2;
+    background-image: url(./images/bg-intro-mobile.svg);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .mockups {
+    position: relative;
+    width: 100%;
+    right: 0;
+  }
+  .section-footer {
+    padding: 3rem 2.5rem;
+  }
+  .right {
+    align-items: center;
   }
 }
 @media screen and (max-width: 480px) {
+  header {
+    padding: 0.5rem 1rem;
+  }
   section {
-    padding: 0 1rem;
+    padding: 4rem 1rem;
   }
   .section-home article {
     padding: 0 0.5rem 0 1rem;
+  }
+  .section-home article h1 {
+    font-size: 3rem;
+  }
+  .left {
+    flex-direction: column;
+    align-items: center;
+  }
+  .container-feature,
+  .last-articles {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  .icons,
+  ul,
+  .right {
+    align-items: center;
   }
 }
